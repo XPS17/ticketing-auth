@@ -12,6 +12,7 @@ const start = async () => {
   }
 
   try {
+    mongoose.set("strictQuery", false);
     await mongoose.connect(process.env.MONGO_URI);
     console.log('Connected to auth MongoDb');
   } catch (err) {
